@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Senior Full-Stack &amp; AI Engineer — Portfolio</title>
+  <meta name="description" content="Senior Full Stack Engineer | Node · Python · React/Next.js · AI Integration (LLM/RAG)" />
+
+  <!-- Unified font: Poppins across the entire site -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Rotating star-cluster background -->
+  <canvas id="starfield"></canvas>
+  <!-- Star-studded mouse trail -->
+  <canvas id="cursor-stars"></canvas>
+  <!-- Soft glow that follows the cursor -->
+  <div id="cursor-glow"></div>
+
+  <!-- Navigation: full-width, tabs spread to both sides -->
+  <header class="nav" id="nav">
+    <a href="#hero" class="nav__logo" aria-label="Home">
+      <span class="nav__logo-mark">JA</span>
+      <span class="nav__logo-text">Jeremias&nbsp;Aguero</span>
+    </a>
+    <nav class="nav__links">
+      <a href="#about">About me</a>
+      <a href="#strengths">Strengths</a>
+      <a href="#stack">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="hero" class="hero">
+      <div class="hero__grid">
+        <div class="hero__content reveal">
+          <p class="hero__eyebrow">
+            <span class="status-dot"></span>
+            Available for remote contract work
+          </p>
+          <h1 class="hero__title">
+            Jeremias <span class="gradient-text">Aguero</span>
+          </h1>
+          <p class="hero__subtitle">
+            Senior Full-Stack &amp; AI Engineer — building
+            <strong>AI-native</strong> products, end&nbsp;to&nbsp;end.
+          </p>
+          <p class="hero__roles">
+            <span class="typed" id="typed"></span><span class="caret">|</span>
+          </p>
+          <p class="hero__lead">
+            7+ years shipping production web applications — from architecture and API
+            design through deployment, monitoring, and scale. Recently focused on
+            turning LLM features, RAG pipelines, and vector search into
+            monitored, production-grade systems.
+          </p>
+          <div class="hero__actions">
+            <a href="#contact" class="btn btn--primary">Start a conversation</a>
+            <a href="#stack" class="btn btn--ghost">Explore the stack</a>
+          </div>
+        </div>
+
+        <div class="hero__visual reveal" style="--d:160ms">
+          <div class="code-card">
+            <div class="code-card__bar">
+              <span class="dot dot--r"></span>
+              <span class="dot dot--y"></span>
+              <span class="dot dot--g"></span>
+              <span class="code-card__file">rag_pipeline.py</span>
+            </div>
+            <pre class="code-card__body"><code><span class="c-key">from</span> langchain <span class="c-key">import</span> hub
+<span class="c-key">from</span> langchain_postgres <span class="c-key">import</span> PGVector
+
+<span class="c-com"># retrieve, then ground the model</span>
+store = PGVector(embeddings, collection=<span class="c-str">"docs"</span>)
+docs  = store.similarity_search(query, k=<span class="c-num">6</span>)
+
+answer = llm.invoke(
+    prompt.format(context=docs, question=query),
+).content  <span class="c-com"># streamed + traced in prod</span></code></pre>
+          </div>
+          <span class="float-badge float-badge--1">⚛️ React</span>
+          <span class="float-badge float-badge--2">🟢 Node.js</span>
+          <span class="float-badge float-badge--3">🧠 LLM · RAG</span>
+        </div>
+      </div>
+
+      <div class="hero__stats reveal" style="--d:260ms">
+        <div class="stat">
+          <span class="stat__num" data-count="7" data-suffix="+">0</span>
+          <span class="stat__label">Years shipping</span>
+        </div>
+        <div class="stat">
+          <span class="stat__num" data-count="6" data-suffix="+">0</span>
+          <span class="stat__label">Years with U.S. teams</span>
+        </div>
+        <div class="stat">
+          <span class="stat__num" data-count="30" data-suffix="+">0</span>
+          <span class="stat__label">Products shipped</span>
+        </div>
+        <div class="stat">
+          <span class="stat__num" data-count="100" data-suffix="%">0</span>
+          <span class="stat__label">End-to-end ownership</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section about">
+      <div class="section__head reveal">
+        <span class="section__tag">01 — About</span>
+        <h2 class="section__title">I take products <span class="gradient-text">all the way</span>.</h2>
+      </div>
+
+      <div class="about__top">
+        <div class="about__intro">
+          <p class="about__lead reveal">
+            I'm a Senior Full-Stack Engineer with <strong>7+ years</strong> building and
+            shipping production web applications — including <strong>6+ years with U.S.
+            companies</strong> across both enterprise platforms and fast-moving startups.
+          </p>
+          <p class="about__text reveal" style="--d:80ms">
+            I work primarily in <strong>TypeScript/JavaScript</strong>, <strong>Node.js</strong>,
+            and <strong>Python</strong>, with <strong>React</strong> and <strong>Next.js</strong>
+            on the front end. I take products end to end — from architecture and API design
+            through deployment, monitoring, and scale — and I can own a feature from
+            requirements to live deployment independently.
+          </p>
+          <p class="about__text reveal" style="--d:160ms">
+            Lately my focus has been integrating AI into real products: <strong>LLM-powered
+            features</strong>, <strong>RAG pipelines</strong>, and <strong>vector search</strong>
+            — taking them from prototype to monitored, production-grade systems rather than
+            one-off API calls. I care about measurable outcomes: faster load times, lower
+            infrastructure cost, and fewer defects.
+          </p>
+        </div>
+
+        <aside class="about__panel reveal" style="--d:120ms">
+          <h3 class="about__panel-title">What I focus on</h3>
+          <ul class="about__list">
+            <li><span class="tick">✦</span> Architecture &amp; API design for systems built to scale</li>
+            <li><span class="tick">✦</span> Production AI: retrieval, evaluation, guardrails, observability</li>
+            <li><span class="tick">✦</span> CI/CD, containerization, and cloud deployment on AWS</li>
+            <li><span class="tick">✦</span> Clear async communication across product, design &amp; stakeholders</li>
+          </ul>
+        </aside>
+      </div>
+
+      <div class="about__cards">
+        <article class="glass-card reveal" style="--d:0ms">
+          <div class="glass-card__icon">⚙️</div>
+          <h3>Enterprise &amp; startups</h3>
+          <p>Comfortable in regulated, large-scale codebases and in zero-to-one startup builds where I wear every hat.</p>
+        </article>
+        <article class="glass-card reveal" style="--d:90ms">
+          <div class="glass-card__icon">🧠</div>
+          <h3>AI in real products</h3>
+          <p>LLM features, RAG, and vector search taken from prototype to production — traced, evaluated, and monitored.</p>
+        </article>
+        <article class="glass-card reveal" style="--d:180ms">
+          <div class="glass-card__icon">🚀</div>
+          <h3>End-to-end delivery</h3>
+          <p>From whiteboard to live deploy: data modeling, APIs, UI, infra, observability, and the rollout in between.</p>
+        </article>
+        <article class="glass-card reveal" style="--d:270ms">
+          <div class="glass-card__icon">🌍</div>
+          <h3>Remote-ready</h3>
+          <p>Open to remote contract work with global teams. Comfortable working across U.S. time zones.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- STRENGTHS -->
+    <section id="strengths" class="section strengths">
+      <div class="section__head reveal">
+        <span class="section__tag">02 — What I bring</span>
+        <h2 class="section__title">A bias toward <span class="gradient-text">measurable outcomes</span>.</h2>
+      </div>
+      <div class="strengths__list">
+        <article class="strength reveal" style="--d:0ms">
+          <span class="strength__index">01</span>
+          <div>
+            <h3>End-to-end ownership</h3>
+            <p>I take a feature from requirements to live deployment independently — data model, API, UI, infrastructure, and rollout. No hand-offs required.</p>
+          </div>
+        </article>
+        <article class="strength reveal" style="--d:80ms">
+          <span class="strength__index">02</span>
+          <div>
+            <h3>Production-grade AI</h3>
+            <p>RAG pipelines, vector search, and LLM features built with retrieval quality, evaluation, guardrails, and tracing — not brittle prompt hacks.</p>
+          </div>
+        </article>
+        <article class="strength reveal" style="--d:160ms">
+          <span class="strength__index">03</span>
+          <div>
+            <h3>Scalable architecture</h3>
+            <p>API and system design that holds up under load — sensible boundaries, caching, queues, and databases chosen for the actual workload.</p>
+          </div>
+        </article>
+        <article class="strength reveal" style="--d:240ms">
+          <span class="strength__index">04</span>
+          <div>
+            <h3>Measurable impact</h3>
+            <p>A bias toward outcomes you can point to: faster load times, lower infrastructure cost, and fewer defects in production.</p>
+          </div>
+        </article>
+        <article class="strength reveal" style="--d:320ms">
+          <span class="strength__index">05</span>
+          <div>
+            <h3>Clear communication</h3>
+            <p>Collaboration across product, design, and stakeholders — async-friendly, well-documented, and decisive so the right thing ships.</p>
+          </div>
+        </article>
+        <article class="strength reveal" style="--d:400ms">
+          <span class="strength__index">06</span>
+          <div>
+            <h3>Quality &amp; reliability</h3>
+            <p>Tested, observable systems — automated testing, monitoring, and CI/CD so changes ship fast and stay stable.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- STACK -->
+    <section id="stack" class="section stack">
+      <div class="section__head reveal">
+        <span class="section__tag">03 — Core stack</span>
+        <h2 class="section__title">Tools I reach for, <span class="gradient-text">production-tested</span>.</h2>
+      </div>
+      <div class="stack__grid" id="stackGrid">
+        <!-- categories injected by script.js -->
+      </div>
+    </section>
+
+    <!-- CONTACT (intentionally static — no animation effects) -->
+    <section id="contact" class="section contact">
+      <div class="contact__card">
+        <span class="section__tag">04 — Contact</span>
+        <h2 class="contact__title">Let's build something <span class="contact__accent">production-grade</span>.</h2>
+        <p class="contact__lead">
+          Open to remote contract work with global teams. If you're integrating AI
+          into a real product and want it monitored and scalable from day one — let's talk.
+        </p>
+        <a href="mailto:jeremiasaguero0323@gmail.com" class="btn btn--primary btn--lg">
+          jeremiasaguero0323@gmail.com
+        </a>
+
+        <div class="contact__methods">
+          <a class="contact__method" href="mailto:jeremiasaguero0323@gmail.com">
+            <span class="contact__method-icon">✉️</span>
+            <span class="contact__method-meta">
+              <span class="contact__method-label">Email</span>
+              <span class="contact__method-value">jeremiasaguero0323@gmail.com</span>
+            </span>
+          </a>
+          <a class="contact__method" href="tel:+543764281036">
+            <span class="contact__method-icon">📞</span>
+            <span class="contact__method-meta">
+              <span class="contact__method-label">Phone</span>
+              <span class="contact__method-value">+54 376 428 1036</span>
+            </span>
+          </a>
+          <a class="contact__method" href="https://www.linkedin.com/in/jeremias-aguero" target="_blank" rel="noopener">
+            <span class="contact__method-icon">in</span>
+            <span class="contact__method-meta">
+              <span class="contact__method-label">LinkedIn</span>
+              <span class="contact__method-value">/in/jeremias-aguero</span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Jeremias Alejandro Aguero Rivarola · Senior Full-Stack &amp; AI Engineer</p>
+    <p class="footer__muted">Crafted with stardust ✦</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

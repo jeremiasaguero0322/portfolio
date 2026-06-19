@@ -103,7 +103,7 @@ strong { color: var(--text); font-weight: 600; }
   font-weight: 500;
 }
 .section__title {
-  font-family: auto;
+  font-family: var(--font);
   font-size: clamp(1.95rem, 4.4vw, 3.2rem);
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -230,7 +230,7 @@ strong { color: var(--text); font-weight: 600; }
   100% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0); }
 }
 .hero__title {
-  font-family: emoji;
+  font-family: var(--font);
   font-size: clamp(2.1rem, 6.4vw, 5rem);
   font-weight: 800;
   letter-spacing: -0.03em;
@@ -453,6 +453,7 @@ strong { color: var(--text); font-weight: 600; }
   background: radial-gradient(360px circle at var(--mx, 50%) var(--my, 0%),
     rgba(124, 92, 255, 0.18), transparent 60%);
   opacity: 0; transition: opacity 0.4s;
+  pointer-events: none; /* let clicks reach the links inside the card */
 }
 .glass-card:hover {
   transform: translateY(-8px);
@@ -549,6 +550,64 @@ strong { color: var(--text); font-weight: 600; }
   background: rgba(34, 211, 238, 0.1);
 }
 
+/* ---------- Projects ---------- */
+.projects__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+@media (max-width: 760px) { .projects__grid { grid-template-columns: 1fr; } }
+.project {
+  display: flex;
+  flex-direction: column;
+  padding: 28px 28px 30px;
+}
+.project__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+.project__icon {
+  font-size: 1.6rem;
+  display: inline-block;
+  animation: bob 4s ease-in-out infinite;
+}
+.project__repo {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-dim);
+  padding: 6px 13px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.04);
+  transition: color 0.25s, border-color 0.25s, background 0.25s;
+}
+.project__repo:hover {
+  color: var(--text);
+  border-color: rgba(34, 211, 238, 0.55);
+  background: rgba(34, 211, 238, 0.1);
+}
+.project__arrow { font-size: 0.9rem; }
+.project__title { font-size: 1.15rem; font-weight: 600; margin-bottom: 10px; }
+.project__title a { color: var(--text); transition: color 0.25s; }
+.project__title a:hover { color: var(--accent-2); }
+.project__desc {
+  color: var(--text-dim);
+  font-size: 0.94rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+.project__chips { margin-top: auto; }
+.projects__cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 36px;
+}
+
 /* ---------- Contact (fully static — no animation effects) ---------- */
 .contact { padding-bottom: 80px; }
 .contact__card {
@@ -584,11 +643,13 @@ strong { color: var(--text); font-weight: 600; }
   color: var(--text-dim);
 }
 .contact__methods {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 14px;
   margin-top: 40px;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .contact__method {
   display: flex;
@@ -623,7 +684,7 @@ strong { color: var(--text); font-weight: 600; }
   color: var(--text-faint);
 }
 .contact__method-value { font-size: 0.92rem; color: var(--text); font-weight: 500; }
-@media (max-width: 620px) { .contact__methods { flex-direction: column; align-items: stretch; } }
+@media (max-width: 620px) { .contact__methods { grid-template-columns: 1fr; } }
 
 /* ---------- Footer ---------- */
 .footer {
